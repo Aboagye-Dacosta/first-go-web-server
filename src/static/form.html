@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <style>
+        /* Reset */
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            font-size: 62.5%;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #ffb199, #ff0844);
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            font-size: 1.6rem;
+            color: #334155;
+            padding: 2rem;
+            animation: fadeIn 0.8s ease forwards;
+        }
+
+        .form-container {
+            background: #ffffff;
+            padding: 3rem 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 420px;
+            animation: fadeUp 1s ease forwards;
+        }
+
+        h2 {
+            text-align: center;
+            color: #ff0844;
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        label {
+            font-weight: 600;
+            color: #475569;
+            margin-bottom: 0.3rem;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 1.5rem;
+            transition: border-color 0.25s ease, box-shadow 0.25s ease;
+            resize: none;
+        }
+
+        input:focus,
+        textarea:focus {
+            outline: none;
+            border-color: #ff0844;
+            box-shadow: 0 0 0 3px rgba(255, 8, 68, 0.15);
+        }
+
+        button {
+            background-color: #ff0844;
+            color: #fff;
+            font-size: 1.6rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 8px;
+            padding: 1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.2s ease;
+        }
+
+        button:hover {
+            background-color: #e2063b;
+            transform: translateY(-2px);
+        }
+
+        button:active {
+            transform: translateY(0);
+        }
+
+        .success-message {
+            text-align: center;
+            color: #16a34a;
+            margin-top: 1.5rem;
+            font-weight: 500;
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1.4rem;
+            color: #ff0844;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        .back-link:hover {
+            color: #e2063b;
+            text-decoration: underline;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="form-container">
+        <h2>Contact Us</h2>
+        <form action="/contact" method="POST">
+            <div class="form-item">
+                <label for="name">Name</label>
+                <input id="name" name="name" type="text" placeholder="Your name" required />
+            </div>
+            <div class="form-item">
+                <label for="email">Email</label>
+                <input id="email" name="email" type="email" placeholder="you@example.com" required />
+            </div>
+            <div class="form-item">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="4" placeholder="Write your message..." required></textarea>
+            </div>
+            <button type="submit">Send Message</button>
+        </form>
+        <a href="/" class="back-link">← Back to Home</a>
+    </div>
+</body>
+
+</html>
